@@ -1,4 +1,7 @@
 import { connect } from "https://deno.land/x/redis@v0.32.1/mod.ts";
+import { config } from "dotenv/mod.ts";
+
+config({ safe: true, export: true, allowEmptyValues: true });
 
 export const redis = await connect({
   hostname: Deno.env.get("REDIS_HOSTNAME") || "",
